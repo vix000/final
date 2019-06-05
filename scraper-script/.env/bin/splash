@@ -1,0 +1,4 @@
+#!/Users/vix/Desktop/STUFF/scraper/scraper-script/.env/bin/python3.6
+
+from splash.server import main
+main()
