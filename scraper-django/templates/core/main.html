@@ -1,0 +1,50 @@
+{% include 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <header>
+            <a href="{% url 'main-view' %}"><i class="fab fa-cloudsmith"></i> SCRAPER</a>
+            <nav>
+                <ul>
+                    {% if request.user.is_anonymous %}
+                        <li>
+                            <a class="btn" href="{% url 'users:register' %}" title="Register">Register</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="{% url 'login' %}" title="Log In">Log in</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <h4 class="hello" href="{% url 'logout' %}" title="Log In">Hello, {{ request.user.username }}</h4>
+                        </li>
+                        <li>
+                            <a class="btn" href="{% url 'logout' %}" title="Log In">Logout</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="{% url 'registers:registers-view' %}" title="History">History</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="{% url 'results-view' %}" title="Results">Results</a>
+                        </li>
+
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <div class="cover">
+            {% block content %}
+                <h1>Discover what's out there.</h1>
+                <form class="flex-form" method="POST" action="{% url 'scraper-view' %}">{% csrf_token %}
+                    {% if request.user.is_anonymous %}
+                        <input disabled type="search" name="identifier" placeholder="Log in or register to find!">
+                    {% else %}
+                    <input type="search" name="identifier" placeholder="Whats on your mind?">   
+                        <input type="submit" namevalue="Search">
+                    {% endif %}
+                </form>
+            {% endblock %}
+        </div>
+
+
+    </div>
+{% endblock %}
