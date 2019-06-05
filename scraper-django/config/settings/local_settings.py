@@ -6,9 +6,9 @@ SECRET_KEY = 'raq^q9&#@0us0#@p^mtpnuc@)d*w_k@+913a(icq2ts2-#gt+2'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'scraper_db',
-        'USER': 'scraper_user',
-        'PASSWORD': 'ug123',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'forest123',
         'HOST': 'localhost',
         'PORT': '',
     }
