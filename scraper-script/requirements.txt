@@ -35,7 +35,7 @@ service-identity==17.0.0
 six==1.11.0
 splash==3.2
 Twisted==16.2.0
-urllib3==1.24
+urllib3==1.26.5
 w3lib==1.19.0
 websocket-client==0.54.0
 xvfbwrapper==0.2.9
